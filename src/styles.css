@@ -1,0 +1,228 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * MUKIL — designer notebook portfolio design system.
+ * All colors are oklch tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* notebook palette */
+  --color-paper: var(--paper);
+  --color-paper-edge: var(--paper-edge);
+  --color-rule: var(--rule);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-marker: var(--marker);
+  --color-highlight: var(--highlight);
+  --color-mint: var(--mint);
+  --color-blossom: var(--blossom);
+  --color-sky: var(--sky);
+  --color-tape: var(--tape);
+
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-hand: "kalam", cursive;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+
+  --shadow-paper: 0 1px 2px oklch(0 0 0 / 0.08), 0 12px 28px -14px oklch(0 0 0 / 0.3);
+  --shadow-lift: 0 6px 10px -4px oklch(0 0 0 / 0.14), 0 26px 44px -20px oklch(0 0 0 / 0.4);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --paper: oklch(0.985 0.006 95);
+  --paper-edge: oklch(0.945 0.008 95);
+  --rule: oklch(0.9 0.02 240);
+  --ink: oklch(0.18 0.01 60);
+  --ink-soft: oklch(0.48 0.01 60);
+
+  --marker: oklch(0.66 0.21 34); /* orange marker */
+  --highlight: oklch(0.85 0.16 88); /* yellow */
+  --mint: oklch(0.85 0.11 165);
+  --blossom: oklch(0.72 0.19 8);
+  --sky: oklch(0.62 0.17 265);
+  --tape: oklch(0.9 0.05 85);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: oklch(0.16 0.008 60);
+  --primary-foreground: oklch(0.985 0.006 95);
+  --secondary: oklch(0.955 0.008 95);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.955 0.008 95);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--highlight);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.006 95);
+  --border: oklch(0.9 0.008 80);
+  --input: oklch(0.9 0.008 80);
+  --ring: var(--marker);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-highlight);
+    color: var(--color-ink);
+  }
+}
+
+/* ---------- notebook surfaces ---------- */
+
+@utility notebook-paper {
+  background-color: var(--color-paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 37px,
+    color-mix(in oklab, var(--color-rule) 70%, transparent) 37px,
+    color-mix(in oklab, var(--color-rule) 70%, transparent) 38px
+  );
+}
+
+@utility paper-grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+}
+
+@utility paper-card {
+  background: var(--color-card);
+  box-shadow: var(--shadow-paper);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility paper-lift {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    transform: translateY(-6px) rotate(-0.6deg);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility marker-underline {
+  background-image: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--color-highlight) 90%, transparent) 0 0.28em,
+    transparent 0.28em
+  );
+  padding-inline: 0.08em;
+}
+
+@utility ink-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.12em;
+    height: 0.14em;
+    border-radius: 999px;
+    background: var(--color-marker);
+    transform: skewY(-1.2deg);
+  }
+}
+
+@utility handwritten {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@utility tape-strip {
+  background: color-mix(in oklab, var(--color-tape) 85%, transparent);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.12);
+  opacity: 0.9;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotate(calc(var(--tilt, 0deg) * -1));
+  }
+}
+
+@utility float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

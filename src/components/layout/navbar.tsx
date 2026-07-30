@@ -56,7 +56,7 @@ export function Navbar() {
         </ul>
 
         <div className="ml-auto flex shrink-0 items-center gap-2">
-          <div className="hidden items-center gap-2 sm:flex">
+          <div className="flex items-center gap-2">
             {socials.map(({ label, href, Icon, tone }) => (
               <a
                 key={label}
@@ -111,17 +111,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-3 flex items-center gap-2">
-            {socials.map(({ label, href, Icon, tone }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                className={cn("grid h-9 w-9 place-items-center rounded-full text-ink", tone)}
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
+          <div className="mt-3 flex justify-end">
             <Link
               to="/contact"
               onClick={() => setOpen(false)}

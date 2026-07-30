@@ -23,7 +23,7 @@ export function Hero() {
             <div
               key={label.text}
               style={{ "--tilt": label.tilt } as React.CSSProperties}
-              className={`float-soft absolute z-10 hidden md:block ${label.className}`}
+              className={`float-soft absolute z-10 ${label.className}`}
             >
               <PaperLabel tone={label.tone}>{label.text}</PaperLabel>
             </div>
@@ -36,8 +36,8 @@ export function Hero() {
           <div className="relative mx-auto mt-8 w-fit max-w-full">
             <SketchFrame className="text-marker" />
             <div className="px-6 py-6 sm:px-14 sm:py-8">
-              <h1 className="text-center font-hand text-[clamp(3.5rem,15vw,9rem)] leading-[0.85] tracking-tight text-ink">
-                MUKIL
+             <h1 className="text-center font-hand text-[clamp(3.5rem,15vw,9rem)] leading-[0.85] tracking-tight text-ink">
+              MUKIL
               </h1>
               <p className="label-mono mt-4 text-center text-[0.62rem] text-ink-soft sm:text-xs">
                 {site.subtitle}

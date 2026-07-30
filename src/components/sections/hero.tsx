@@ -8,10 +8,30 @@ import { Magnetic } from "@/components/motion/magnetic";
 import { TextReveal } from "@/components/motion/reveal";
 
 const floatingLabels = [
-  { text: "3D Modelling", tone: "mint" as const, className: "left-[4%] top-[6%] sm:left-[12%]", tilt: "-4deg" },
-  { text: "Automotive Visuals", tone: "highlight" as const, className: "right-[4%] top-[6%] sm:right-[10%]", tilt: "3deg" },
-  { text: "Motion Design", tone: "highlight" as const, className: "left-0 top-[46%] xl:left-[2%]", tilt: "-6deg" },
-  { text: "AI Creative", tone: "mint" as const, className: "right-0 top-[46%] xl:right-[2%]", tilt: "5deg" },
+  {
+    text: "3D VISUALIZATION",
+    tone: "mint" as const,
+    className: "left-[-1%] top-[41%] sm:left-[12%]",
+    tilt: "-4deg",
+  },
+  {
+    text: "AUTOMOTIVE CGI",
+    tone: "highlight" as const,
+    className: "right-[-3%] top-[43%] sm:right-[10%]",
+    tilt: "8deg",
+  },
+  {
+    text: "Motion Design",
+    tone: "highlight" as const,
+    className: "left-0 top-[9%] xl:left-[2%]",
+    tilt: "-6deg",
+  },
+  {
+    text: "AI WORKFLOWS",
+    tone: "mint" as const,
+    className: "right-0 top-[8%] xl:right-[2%]",
+    tilt: "9deg",
+  },
 ];
 
 export function Hero() {
@@ -36,8 +56,8 @@ export function Hero() {
           <div className="relative mx-auto mt-8 w-fit max-w-full">
             <SketchFrame className="text-marker" />
             <div className="px-6 py-6 sm:px-14 sm:py-8">
-             <h1 className="text-center font-hand text-[clamp(3.5rem,15vw,9rem)] leading-[0.85] tracking-tight text-ink">
-              MUKIL
+              <h1 className="text-center font-hand text-[clamp(3.5rem,15vw,9rem)] leading-[0.85] tracking-tight text-ink">
+                MUKIL
               </h1>
               <p className="label-mono mt-4 text-center text-[0.62rem] text-ink-soft sm:text-xs">
                 {site.subtitle}
@@ -52,10 +72,10 @@ export function Hero() {
             <Avatar className="hidden sm:block" rotate={-6} />
             <div className="max-w-xl px-2">
               <h2 className="text-center font-sans text-[clamp(1.75rem,5vw,3.1rem)] font-medium leading-[1.15] tracking-tight text-ink">
-                <TextReveal text="I create visuals that" />{" "}
+                <TextReveal text="I create visuals that" />
                 <span className="marker-underline">
                   <TextReveal text="move" />
-                </span>{" "}
+                </span>
                 <TextReveal text="brands forward." delay={0.15} />
               </h2>
             </div>

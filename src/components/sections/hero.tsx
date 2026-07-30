@@ -38,16 +38,17 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden px-4 pt-14 pb-20 sm:px-6 sm:pt-20">
       <div className="mx-auto max-w-5xl">
-        <div className="relative">
-          {floatingLabels.map((label) => (
-            <div
+       <div className="hidden lg:block">
+           {floatingLabels.map((label) => (
+              <div
               key={label.text}
-              style={{ "--tilt": label.tilt } as React.CSSProperties}
-              className={`float-soft absolute z-10 ${label.className}`}
+      style={{ "--tilt": label.tilt } as React.CSSProperties}
+      className={`float-soft absolute z-10 ${label.className}`}
             >
-              <PaperLabel tone={label.tone}>{label.text}</PaperLabel>
-            </div>
-          ))}
+      <PaperLabel tone={label.tone}>{label.text}</PaperLabel>
+    </div>
+  ))}
+</div>
 
           <p className="handwritten text-center text-3xl text-ink-soft">
             <span className="ink-underline relative">my name is</span>

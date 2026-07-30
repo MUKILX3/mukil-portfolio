@@ -12,7 +12,7 @@ export function Footer() {
             <p className="handwritten text-5xl text-ink sm:text-6xl">Mukil</p>
             <p className="label-mono mt-3 text-ink-soft">{site.role}</p>
             <p className="handwritten mt-6 text-2xl text-ink-soft">
-              Made with Blender + Coffee ☕
+              Made with 3 Spoon of Coffee ☕
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end">

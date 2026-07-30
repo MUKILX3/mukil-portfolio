@@ -105,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Mukil",
-          jobTitle: "3D Artist & Visual Designer",
+          jobTitle: "3D Artist & AI Designer",
           url: "/",
         }),
       },

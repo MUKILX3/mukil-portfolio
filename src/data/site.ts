@@ -1,6 +1,6 @@
 export const site = {
   name: "Mukil",
-  role: "3D Artist & Visual Designer",
+  role: "3D Artist & AI Designer",
   subtitle: "3D Artist • Automotive Visualization • Motion Designer • AI Creative Specialist",
   email: "ptmukil343@email.com",
   whatsapp: "https://wa.me/971522219330?text=Hi%20Mukil",

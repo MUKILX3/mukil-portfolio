@@ -30,9 +30,9 @@ export type GalleryItem = {
 const SAMPLE_VIDEO = "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4";
 
 const seed: Omit<GalleryItem, "id">[] = [
-  { title: "Jimny — Hero Frame", category: "Automotive", src: automotive, ratio: 1.55, projectSlug: "automotive-cgi" },
-  { title: "Noir Skincare", category: "Product", src: product, ratio: 1.55, projectSlug: "product-visualization" },
-  { title: "Sound Hills Loop", category: "Motion", src: motion, ratio: 1.55, video: SAMPLE_VIDEO, projectSlug: "motion-design" },
+  { title: "BMW M5 RENDER", category: "Automotive", src: automotive, ratio: 1.55, projectSlug: "automotive-cgi" },
+  { title: "Nothing cell Concept", category: "ANIMATION", src: product, ratio: 1.55, projectSlug: "product-visualization" },
+  { title: "KERALA THEYYAM RENDER", category: "3D ARTWORK", src: motion, ratio: 1.55, video: SAMPLE_VIDEO, projectSlug: "motion-design" },
   { title: "Night Studio", category: "Experiments", src: workspace, ratio: 1.25 },
   { title: "Portrait Study", category: "Branding", src: portrait, ratio: 0.8 },
   { title: "Paint Breakdown", category: "CGI", src: automotive, ratio: 1.55 },

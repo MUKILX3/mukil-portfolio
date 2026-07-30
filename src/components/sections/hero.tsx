@@ -11,25 +11,25 @@ const floatingLabels = [
   {
     text: "3D VISUALIZATION",
     tone: "mint" as const,
-    className: "left-[-1%] top-[41%] sm:left-[12%]",
-    tilt: "-4deg",
+    className: "left-[-1%] top-[41%] sm:left-[5%]",
+    tilt: "4deg",
   },
   {
     text: "AUTOMOTIVE CGI",
     tone: "highlight" as const,
-    className: "right-[-3%] top-[43%] sm:right-[10%]",
-    tilt: "8deg",
+    className: "right-[-3%] top-[43%] sm:right-[5%]",
+    tilt: "-8deg",
   },
   {
     text: "Motion Design",
     tone: "highlight" as const,
-    className: "left-0 top-[9%] xl:left-[2%]",
+    className: "left-[-2%] top-[8%] sm:left-[4%]",
     tilt: "-6deg",
   },
   {
     text: "AI WORKFLOWS",
     tone: "mint" as const,
-    className: "right-0 top-[8%] xl:right-[2%]",
+    className: "right-10 top-[8%] xl:right-[2%]",
     tilt: "9deg",
   },
 ];
@@ -38,17 +38,16 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden px-4 pt-14 pb-20 sm:px-6 sm:pt-20">
       <div className="mx-auto max-w-5xl">
-       <div className="hidden lg:block">
-           {floatingLabels.map((label) => (
-              <div
+        <div className="relative">
+          {floatingLabels.map((label) => (
+            <div
               key={label.text}
-      style={{ "--tilt": label.tilt } as React.CSSProperties}
-      className={`float-soft absolute z-10 ${label.className}`}
+              style={{ "--tilt": label.tilt } as React.CSSProperties}
+              className={`hidden lg:block float-soft absolute z-10 ${label.className}`}
             >
-      <PaperLabel tone={label.tone}>{label.text}</PaperLabel>
-    </div>
-  ))}
-</div>
+              <PaperLabel tone={label.tone}>{label.text}</PaperLabel>
+            </div>
+          ))}
 
           <p className="handwritten text-center text-3xl text-ink-soft">
             <span className="ink-underline relative">my name is</span>
@@ -70,7 +69,7 @@ export function Hero() {
           <HandArrow className="absolute right-[13%] top-[70%] hidden -scale-x-100 rotate-[8deg] text-ink lg:block" />
 
           <div className="mt-14 flex items-center justify-center gap-4 sm:gap-10">
-            <Avatar className="hidden sm:block" rotate={-6} />
+            <Avatar className="hidden sm:block" rotate={-30} />
             <div className="max-w-xl px-2">
               <h2 className="text-center font-sans text-[clamp(1.75rem,5vw,3.1rem)] font-medium leading-[1.15] tracking-tight text-ink">
                 <TextReveal text="I create visuals that" />
